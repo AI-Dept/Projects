@@ -16,10 +16,7 @@ jobs:
             print("Directory contents:")
             for f in os.listdir():
                 print(f)
-      - name: Install Python dependencies
-        uses: py-actions/py-dependency-install@v3
-        with:
-          path: $(git ls-tree -r --name-only requirements.txt)
       - name: Code check
         run: |
+            pip install -e .
             python3 $(git ls-files '*.py')
