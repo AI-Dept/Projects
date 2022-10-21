@@ -18,6 +18,8 @@ jobs:
                 print(f)
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v3
+        with:
+          path: $(git ls-files 'requirements.txt')
       - name: Code check
         run: |
             python3 $(git ls-files '*.py')
