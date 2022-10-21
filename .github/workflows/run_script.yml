@@ -19,7 +19,7 @@ jobs:
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v3
         with:
-          path: $(git ls-files 'requirements.txt')
+          path: "/requirements.txt"
       - name: Code check
         run: |
             python3 $(git ls-files '*.py')
